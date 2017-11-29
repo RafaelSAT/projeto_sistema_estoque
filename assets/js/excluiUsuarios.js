@@ -17,7 +17,7 @@ function excluir(){
 			var ativo = 3;
 			
 			$.ajax({
-				url:'http://sistema_estoque.pc/models/ExcluirUsuario.php',
+				url:'http://projeto_sistema_estoque.pc/models/ExcluirUsuario.php',
 				type:'POST',
 				data:{ativo:ativo, id:id},
 				success:function(msgEx){
@@ -37,7 +37,7 @@ $(function(){
 	$('.tabelaExcUsuario').ready(function(){
 		
 		$.ajax({
-			url:'http://sistema_estoque.pc/models/TabelaUsuarios.php',
+			url:'http://projeto_sistema_estoque.pc/models/TabelaUsuarios.php',
 			type:'POST',
 			dataType:'json',
 			success:function(json){

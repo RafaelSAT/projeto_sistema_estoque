@@ -27,3 +27,7 @@ Como eu disse, este projeto utiliza o wamp, e geralmente o caminho deste arquivo
 
 5º Passo: Este projeto utiliza COMPOSER, caso de erro nos relatórios baixe o composer no site https://getcomposer.org/download/ e instale normalmente.
 
+6º Passo: Após a instalação do Composer, abre seu cmd, navegue até a pasta deste projeto e digite a seguinte linha de comando
+composer reuire mpdf/mpdf
+
+Aguarde a instalação do mesmo, depois pode sair do cmd.

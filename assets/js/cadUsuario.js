@@ -23,7 +23,7 @@ $(function(){
 			
 			$.ajax({
 				type:'POST',
-				url:'http://sistema_estoque.pc/models/CadastrarUsuarios.php',
+				url:'http://projeto_sistema_estoque.pc/models/CadastrarUsuarios.php',
 				data:{usuario:usuario, senha:senha, email:email, permissoes:permissoes},				
 				success:function(msgC){
 					alert(msgC);

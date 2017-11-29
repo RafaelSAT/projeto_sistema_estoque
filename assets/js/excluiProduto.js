@@ -19,7 +19,7 @@ function excluiProduto(){
 			var ativo = 2;
 			
 			$.ajax({
-				url:'http://sistema_estoque.pc/models/ExcluirProduto.php',
+				url:'http://projeto_sistema_estoque.pc/models/ExcluirProduto.php',
 				type:'POST',
 				data:{id:id, ativo:ativo},
 				success:function(msg){
@@ -43,7 +43,7 @@ $(function(){
 		var nome = $('input[name=campo_buscaExcProduto]').val();
 		
 		$.ajax({
-			url:'http://sistema_estoque.pc/models/BuscaProduto.php',
+			url:'http://projeto_sistema_estoque.pc/models/BuscaProduto.php',
 			type:'POST',
 			dataType:'json',
 			data:{nome:nome},

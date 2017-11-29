@@ -45,7 +45,7 @@ $(function(){
 		var nome = $('input[name=campo_buscaProduto]').val();
 		
 		$.ajax({
-			url:'http://sistema_estoque.pc/models/BuscaProduto.php',
+			url:'http://projeto_sistema_estoque.pc/models/BuscaProduto.php',
 			type:'POST',
 			dataType:'json',
 			data:{nome:nome},

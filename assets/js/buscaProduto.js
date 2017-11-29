@@ -21,7 +21,7 @@ function alterarProduto(){
 			var descricao = $('input[name=campo_AltDescricaoProduto]').val();			
 			
 			$.ajax({
-				url:'http://sistema_estoque.pc/models/AlterarProduto.php',
+				url:'http://projeto_sistema_estoque.pc/models/AlterarProduto.php',
 				type:'POST',
 				data:{id:id, tipo:tipo, valor:valor, descricao:descricao},
 				success:function(msg){

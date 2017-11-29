@@ -25,5 +25,5 @@ Como eu disse, este projeto utiliza o wamp, e geralmente o caminho deste arquivo
 
 4º Passo: digitar o endereço do projeto no seu navegador, exemplo:http://projeto_sistema_estoque.pc
 
-Este projeto utiliza COMPOSER, caso de erro nos relatórios baixe o composer no site https://getcomposer.org/download/
+5º Passo: Este projeto utiliza COMPOSER, caso de erro nos relatórios baixe o composer no site https://getcomposer.org/download/ e instale normalmente.
 

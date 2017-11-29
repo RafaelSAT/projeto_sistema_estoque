@@ -8,11 +8,11 @@
 				var opcao = $(this).val()
 				
 				$.ajax({
-					url:'http://sistema_estoque.pc/models/RelUsuarios.php',
+					url:'http://projeto_sistema_estoque.pc/models/RelUsuarios.php',
 					data:{opcao:opcao},
 					type:'POST',
 					success:function(msg){
-						window.location.href = 'http://sistema_estoque.pc/models/RelUsuarios.php';
+						window.location.href = 'http://projeto_sistema_estoque.pc/models/RelUsuarios.php';
 					},
 					error:function(e){
 						alert('Não foi possível gerar relatório. '+e);

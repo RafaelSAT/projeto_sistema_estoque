@@ -7,7 +7,7 @@ $(function(){
 		var senha = $('input[name=campo_senha]').val();
 	
 		$.ajax({
-			url:'http://sistema_estoque.pc/models/Login.php',
+			url:'http://projeto_sistema_estoque.pc/models/Login.php',
 			type:'POST',
 			data:{usuario:usuario, senha:senha},
 			cache:false,

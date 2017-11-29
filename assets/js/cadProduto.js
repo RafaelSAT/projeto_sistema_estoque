@@ -10,7 +10,7 @@ $(function(){
 		var descricao_produto = $('input[name=campo_descricaoProduto]').val();
 		
 		$.ajax({
-			url:'http://sistema_estoque.pc/models/CadastrarProduto.php',
+			url:'http://projeto_sistema_estoque.pc/models/CadastrarProduto.php',
 			type:'POST',
 			data:{nome_produto:nome_produto, valor_produto:valor_produto, tipo_produto:tipo_produto, descricao_produto:descricao_produto},
 			success:function(msg){

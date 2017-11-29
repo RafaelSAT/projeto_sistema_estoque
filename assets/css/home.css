@@ -1,0 +1,263 @@
+	body{	
+	margin:0;
+}
+.container{
+	width:100%;
+	height:100%;
+	padding:20px;	
+	box-sizing:border-box;
+}
+.coluna-menu{	
+	width:30%;
+	border:1px solid #00695c;
+	border-radius:5px;
+	box-sizing:border-box;
+	float:left;
+	background-color:#00695c;
+}
+.coluna-conteudo{	
+	width:67%;
+	margin-left:10px;	
+	box-sizing:border-box;
+	float:left;
+	padding:20px;
+	background-color:#00695c;
+	border:1px solid #00695c;
+	border-radius:5px;
+	color:white;
+}
+.saudacao{
+	text-align:center;
+	color:white;
+	width:100%;
+	height:20%;
+	box-sizing:border-box;
+}
+.itens-menu{
+	width:100%;
+	text-align:center;
+	font-size:20px;
+	border:1px solid #00695c;
+	color:white;
+	background-color:#64d8cb;
+	box-sizing:border-box;
+	cursor:pointer;
+}
+.itens-subMenu{
+	display:none;	
+    background-color:#00695c;
+    width:100%;    
+    z-index:1;
+	box-sizing:border-box;
+}
+.itens-subMenu a{
+	padding:15px;
+	display:block;
+}
+
+.itens-menu:hover .itens-subMenu {
+    display: block;	
+}
+.itens-subMenu a:hover{
+	background-color:#439889;
+}
+.conteudo{
+	display:none;
+}
+.cadUsuario, .cadProduto{
+	margin:auto;
+	width:50%;
+}
+.cadUsuario input[type=text], input[type = password], input[type=email]{
+	width:50%;
+	border:1px solid black;
+	display:inline-block;
+	padding:5px;
+	margin:10px;
+}
+.cadUsuario input[type=checkbox]{
+	margin-left:30px;
+}
+.cadUsuario input[type=submit]{
+	margin-left:100px;
+	margin-top:20px;
+	width:50%;
+	padding:10px;
+	background-color:#64d8cb;
+	color:white;
+	border:#00695c;
+	border-radius:5px;
+}
+.cadUsuario input[type=submit]:hover{
+	background-color:#439889;
+}
+.cadUsuario .legenda{
+	border:1px solid #64d8cb;
+	border-radius:5px;
+	padding-left:20px;
+}
+.cadProduto input[type=text]{
+	width:70%;
+	border:1px solid black;
+	display:inline-block;
+	padding:5px;
+	margin:10px;
+}
+.cadProduto input[type=submit]{
+	margin-left:50px;
+	margin-top:20px;
+	width:50%;
+	padding:10px;
+	background-color:#64d8cb;
+	color:white;
+	border:#00695c;
+	border-radius:5px;
+}
+.cadProduto input[type=submit]:hover{
+	background-color:#439889;
+}
+.tabelaUsuario, .tabelaExcUsuario, .tabelaBuscaProduto, .tabelaExcluirProduto{
+	width:100%;
+	margin:auto;
+	border:1px solid #64d8cb;
+	border-collapse:collapse;
+	color:white;
+	box-sizing:border-box;
+	text-align:center;	
+}
+.tabelaUsuario td, .tabelaExcUsuario td, .tabelaBuscaProduto td, .tabelaExcluirProduto td{
+	padding:20px;
+}
+.btnTabelaUsuarios{
+	width:50%;
+	padding:10px;
+	background-color:#64d8cb;
+	color:white;
+	border:#00695c;
+	border-radius:5px;
+}
+.btnTabelaUsuarios:hover{
+	background-color:#439889;
+	cursor:pointer;
+}
+.btnExluirUsuarios{
+	width:50%;
+	padding:10px;
+	background-color:#64d8cb;
+	color:white;
+	border:#00695c;
+	border-radius:5px;
+}
+.btnBuscaProduto{
+	width:20%;
+	padding:10px;
+	background-color:#64d8cb;
+	color:white;
+	border:#00695c;
+	border-radius:5px;
+}
+.btnAlteraProduto{
+	width:100%;
+	padding:10px;
+	background-color:#64d8cb;
+	color:white;
+	border:#00695c;
+	border-radius:5px;
+}
+.btnExcluiProduto{
+	width:100%;
+	padding:10px;
+	background-color:#64d8cb;
+	color:white;
+	border:#00695c;
+	border-radius:5px;
+}
+.btnExcluiProduto:hover{
+	background-color:#439889;
+	cursor:pointer;
+}
+.btnAlteraProduto:hover{
+	background-color:#439889;
+	cursor:pointer;
+}
+.btnExluirUsuarios:hover{
+	background-color:#439889;
+	cursor:pointer;
+}
+.btnBuscaProduto:hover{
+	background-color:#439889;
+	cursor:pointer;
+}
+#form_BuscaProduto input[type=text], #form_excProduto input[type=text]{
+	width:40%;
+	border:1px solid black;
+	display:inline-block;
+	padding:5px;
+	margin:10px;
+}
+#form-modalAltProdutos input[type=text]{
+	width:40%;
+	border:1px solid black;
+	display:inline-block;
+	padding:5px;
+	margin:10px;
+}
+#form-modalAltProdutos label{
+	margin-left:100px;
+}
+.relUsuarios, .relProdutos{
+	text-align:center;
+}
+.btnRelUsuarios, .btnRelProdutos{
+	width:20%;
+	margin-top:20px;
+	padding:10px;
+	background-color:#64d8cb;
+	color:white;
+	border:#00695c;
+	border-radius:5px;
+}
+.btnRelUsuarios:hover, .btnRelProdutos:hover{
+	background-color:#439889;
+	cursor:pointer;
+}
+.modal{
+	display:none;
+	position:fixed;
+    z-index:1;
+    padding-top:100px;    
+    top:0;	
+    width:100%;
+    height:100%;    
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.4);	
+}
+.container-modal{
+	background-color:#00695c;
+	width:50%;
+	margin:auto;	
+	padding:20px;
+	border:2px solid #64d8cb;
+	border-radius:5px;	
+	box-sizing:border-box;
+	color:white;	
+}
+.container-modal input[type=button], .container-modal input[type=submit]{
+	margin-top:15px;
+	margin-bottom:5px;
+	margin-left:150px;
+	width:50%;
+	padding:10px;
+	background-color:#64d8cb;
+	color:white;
+	border:#00695c;
+	border-radius:5px;	
+}
+.container-modal input[type=submit]:hover{
+	background-color:#439889;
+	cursor:pointer;
+}
+.container-modal input[type=button]:hover{
+	background-color:#439889;
+	cursor:pointer;
+}

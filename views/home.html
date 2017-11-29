@@ -1,0 +1,229 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'/>
+		<title>Home - Sistema de Estoque</title>
+		<link href='<?php echo BASE_URL;?>assets/css/home.css' rel='stylesheet' type='text/css'/>
+	</head>
+	<body onload='permissao()'>
+		<div class='container'>
+			<div class='coluna-menu'>
+				<div class='saudacao'>
+					<h2>Sistema de Estoque v1.0</h2>
+					<h2>Bem Vindo <?php echo $usuario;?></h2>
+					<input type='hidden' value='<?php echo $permissoes?>' name='permissoes'/>
+					<a style='color:white;' href='<?php echo BASE_URL;?>models/Sair.php'>Sair</a>
+				</div>
+				<div class='itens-menu'>
+					<p>Usuários</p>
+						<div class='itens-subMenu'>
+							<a id='cadUsuario' class='botao'>Cadastrar Usuário</a></br>
+							<a id='altUsuario' class='botao'>Alterar Usuário</a></br>
+							<a id='excUsuario' class='botao'>Excluir Usuário</a>
+						</div>
+				</div>
+				<div class='itens-menu' id='itens-produtos'>
+					<p>Produtos</p>
+						<div class='itens-subMenu'>
+							<a id='cadProduto' class='botao'>Cadastrar Produto</a></br>
+							<a id='altProduto' class='botao'>Alterar Produto</a></br>
+							<a id='excProduto' class='botao'>Excluir Produto</a>
+						</div>
+				</div>
+				<div class='itens-menu' id='itens-relatorios'>
+					<p>Relatorios</p>
+						<div class='itens-subMenu'>
+							<a id='relUsuarios' class='botao'>Gerar Relatório de Usuarios</a></br>
+							<a id='relProdutos' class='botao'>Gerar Relatório de Produtos</a></br>							
+						</div>
+				</div>
+			</div>
+			<div class='coluna-conteudo'>
+				<div class='conteudo' id='cadUsuario'>
+					<div class='cadUsuario'>
+						<form method='POST' id='form_cadUsuario'>
+							<label>Nome do novo Usuário</label>
+							<input type='text' name='campo_cadUsuario-usuario' autocomplte='off' required/></br>
+							<label>Email do novo Usuário</label>
+							<input type='email' name='campo_cadUsuario-email' autocomplte='off' required/>
+							<label>Senha do novo Usuário</label>
+							<input type='password' name='campo_cadUsuario-senha' maxlength='32' required/></br>
+							<input type='checkbox' name='add' value='ADD' checked/> ADD
+							<input type='checkbox' name='edit' value='EDIT'/> EDIT
+							<input type='checkbox' name='del' value='DEL'/> DEL
+							<input type='checkbox' name='ver' value='VER'/> VER</br>
+							<input type='submit' value='Cadastrar Usuário' id='btn_cadUsuario'/>
+						</form>
+						<div class='legenda'>
+							<p>Legenda</p>
+							<p>ADD: Permite que o usuário cadastre produtos.</p>
+							<p>EDIT: Permite que o usuário edite produtos.</p>
+							<p>DEL: Permite que o usuário exclua produtos.</p>
+							<p>VER: Permite que o usuário gere relatórios.</p>
+						</div>
+					</div>
+				</div>
+				<div class='conteudo' id='altUsuario'>
+					<table class='tabelaUsuario'/>
+						<thead>
+							<tr>
+								<th>Usuários</th>
+								<th>E-mail</th>
+								<th>Opções</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+				<div class='conteudo' id='excUsuario'>
+					<table class='tabelaExcUsuario'/>
+						<thead>
+							<tr>
+								<th>Usuários</th>
+								<th>E-mail</th>
+								<th>Opções</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+				<div class='conteudo' id='cadProduto'>
+					<div class='cadProduto'>
+						<form method='POST' id='form_cadProduto'>
+							<label>Nome do produto:</label>
+							<input type='text' name='campo_nomeProduto'placeholder='Insria o nome do produto aqui' autocomplete='off' required/></br>
+							<label>Valor do produto:</label>
+							<input type='text' name='campo_valorProduto' placeholder='Insria o valor do produto aqui' pattern='[0-9.,]{1,}' autocomplete='off' required/></br>
+							<label>Tipo do produto:</label>
+							<input type='text' name='campo_tipoProduto' placeholder='Ex: eletrônico, papelaria, escritório, etc...' autocomplete='off' required/></br>
+							<label>Descrição do produto:</label>
+							<input type='text' name='campo_descricaoProduto' placeholder='Digite uma breve descrição do Produto.' autocomplete='off' required/></br>
+							<input type='submit' value='Cadastrar Produto' id='btnCadastrarProduto'/>
+						</form>
+					</div>
+				</div>
+				<div class='conteudo' id='altProduto'>
+					<div class='altProduto'>
+						<form method='POST' id='form_BuscaProduto'>
+							<label>Pesquisar produto:</label>
+							<input type='text' name='campo_buscaProduto' placeholder='Digite o nome completo ou parte do nome do produto' autocomplete='off' required/>
+							<input type='submit' value='Pesquisar'  class='btnBuscaProduto' id='btnBuscaProduto'/>
+						</form>
+						<hr>
+						<table class='tabelaBuscaProduto'>
+							<thead>
+								<tr>
+									<th>Código</th>
+									<th>Nome</th>
+									<th>Tipo</th>
+									<th>Valor</th>
+									<th>Descrição</th>
+									<th>Opção</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class='conteudo' id='excProduto'>
+					<div class='excProduto'>
+						<form method='POST' id='form_excProduto'>
+							<label>Pesquisar produto:</label>
+							<input type='text' name='campo_buscaExcProduto' placeholder='Digite o nome completo ou parte do nome do produto' autocomplete='off' required/>
+							<input type='submit' value='Pesquisar'  class='btnBuscaProduto' id='btnBuscaExcProduto'/>
+						</form>
+						<hr>
+						<table class='tabelaExcluirProduto'>
+							<thead>
+								<tr>
+									<th>Código</th>
+									<th>Nome</th>
+									<th>Tipo</th>
+									<th>Valor</th>
+									<th>Descrição</th>
+									<th>Opção</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class='conteudo' id='relUsuarios'>
+					<div class='relUsuarios'>
+						<h3>Aqui você poderá gerar um relatório pdf com os usuários ativos ou inativos no sistema.</h3>
+						<form method='POST' id='form-relUsuarios' action='<?php echo BASE_URL?>models/RelUsuarios.php'>
+							<input type='radio' name='opcaoUsuarios' value='1' checked/> Usuários Ativos
+							<input type='radio' name='opcaoUsuarios' value='3'/> Usuários Desativados</br>
+							<input type='submit' value='Gerar Relatório' class='btnRelUsuarios' id='btnRelUsuarios'/>
+						</form>
+					</div>
+				</div>
+				<div class='conteudo' id='relProdutos'>
+					<div class='relProdutos'>
+						<h3>Aqui você poderá gerar um relatório pdf com os produtos ativos ou inativos no sistema.</h3>
+						<form method='POST' id='form-relProdutos' action='<?php echo BASE_URL?>models/RelProdutos.php'>
+							<input type='radio' name='opcaoProdutos' value='1' checked/> Produtos Ativos
+							<input type='radio' name='opcaoProdutos' value='2'/> Produtos Desativados</br>
+							<input type='submit' value='Gerar Relatório' class='btnRelProdutos' id='btnRelProdutos'/>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='modal' id='modalAltUsuarios'>
+			<div class='container-modal'>							
+				<form  id='form-modalAltUsuarios' method='POST'>
+					<label>Alterar E-mail:</label>
+					<input type='email' name='campo_AltEmail' placeholder='Insira um novo e-mail.' autocomplete='off' /></br>					
+					<input type='submit' value='Alterar' id='btnAlterarUsuario'/>
+					<input type='button' value='Cancelar' id='btnCancelarUsuario'/>				
+				</form>
+			</div>
+		</div>
+		<div class='modal' id='modalExcUsuarios'>
+			<div class='container-modal'>							
+				<form  id='form-modalExcUsuarios' method='POST'>
+					<h2 style='text-align:center;'>Deseja EXCLUIR este usuário?</h2>
+					<input type='button' value='Sim' id='btnExcSUsuario'/>
+					<input type='button' value='Não' id='btnExcNUsuario'/>
+				</form>
+			</div>
+		</div>
+		<div class='modal' id='modalAltProdutos'>
+			<div class='container-modal'>							
+				<form  id='form-modalAltProdutos' method='POST'>
+					<label>Alterar Tipo:</label>
+					<input type='text' name='campo_AltTipoProduto' placeholder='Insira um novo tipo.' autocomplete='off' required/></br>
+					<label>Alterar Valor:</label>
+					<input type='text' name='campo_AltValorProduto' placeholder='Insira um novo valor.' pattern='[0-9.,]{1,}' autocomplete='off' required/></br>	
+					<label>Alterar Descrição:</label>
+					<input type='text' name='campo_AltDescricaoProduto' placeholder='Insira uma nova descrição.' autocomplete='off' required/></br>						
+					<input type='submit' value='Alterar Produto' id='btn_modalAlterarProduto'/>
+					<input type='button' value='Cancelar' id='btn_modalAltCancelarProduto'/>				
+				</form>
+			</div>
+		</div>
+		<div class='modal' id='modalExcProdutos'>
+			<div class='container-modal'>							
+				<form  id='form-modalExcProdutos' method='POST'>
+					<h2 style='text-align:center;'>Deseja EXCLUIR este Produto?</h2>
+					<input type='button' value='Sim' id='btnExcSProduto'/>
+					<input type='button' value='Não' id='btnExcNProduto'/>
+				</form>
+			</div>
+		</div>
+		<script src='<?php echo BASE_URL?>/assets/js/jquery-3.2.1.min.js' type='text/javascript'></script>
+		<script src='<?php echo BASE_URL?>/assets/js/permissao.js' type='text/javascript'></script>
+		<script src='<?php echo BASE_URL?>/assets/js/conteudo.js' type='text/javascript'></script>
+		<script src='<?php echo BASE_URL?>/assets/js/cadUsuario.js' type='text/javascript'></script>
+		<script src='<?php echo BASE_URL?>/assets/js/tabelaUsuarios.js' type='text/javascript'></script>
+		<script src='<?php echo BASE_URL?>/assets/js/excluiUsuarios.js' type='text/javascript'></script>
+		<script src='<?php echo BASE_URL?>/assets/js/cadProduto.js' type='text/javascript'></script>	
+		<script src='<?php echo BASE_URL?>/assets/js/buscaProduto.js' type='text/javascript'></script>
+		<script src='<?php echo BASE_URL?>/assets/js/excluiProduto.js' type='text/javascript'></script>		
+	</body>
+</html>

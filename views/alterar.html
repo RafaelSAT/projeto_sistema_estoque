@@ -1,0 +1,20 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'/>
+		<title>Sistema de Estoque</title>
+		<link href='<?php echo BASE_URL;?>assets/css/login.css' type='text/css' rel='stylesheet'/>
+	</head>
+	<body>
+		<div class='container-principal'>
+			<form class='formReset' method='POST' action='<?php echo BASE_URL;?>redefinir/alteraSenha'>
+				<label>Insira uma nova senha abaixo.</label>
+				<input type='password' name='campo_senha'  maxlength='32' required/>
+				<input type='submit' value='Alterar Senha'/>
+				<input type='hidden' value='<?php echo $id;?>' name='id'/>
+				<input type='hidden' value='<?php echo $usuario;?>' name='usuario'/>
+				<input type='hidden' value='<?php echo $token;?>' name='token'/>
+			</form>
+		</div>
+	</body>
+</html>

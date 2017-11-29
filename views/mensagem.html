@@ -1,0 +1,23 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'/>
+		<title>Redefinição - Sistema de Estoque</title>
+		<link href='<?php echo BASE_URL;?>assets/css/login.css' type='text/css' rel='stylesheet'/>
+	</head>
+	<body>
+		<div class='container-principal'>
+			<p>Como estou usando um servidor local, não há possibilidade de um real envio de e-mail.</p>
+			<p>Por isso está página visa a ser um "e-mail", para ilustrar esta situação de "esqueci minha senha".</p>
+			<hr>
+			<div class='corpo'>
+				<p>Título do email: Alteração de Senha - Sistema de Estoque</p>
+				<p>De: suporte@sistema-estoque.br</p>
+				<p>Para: <?php echo $email;?></p>
+				<p>Assunto</p>
+				<p>Você solicitou a alteração de senha para o usuário <?php $usuario?>, clique no link abaixo para realizar a alteração da senha.</p>
+				<a href='<?php echo BASE_URL;?>redefinir/verificaToken/<?php echo $token;?>/<?php echo $usuario?>/<?php echo $id;?>'>Clique aqui.</a>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'/>
+		<title>Login - Sistema de Estoque</title>
+		<link href='<?php echo BASE_URL;?>assets/css/login.css' rel='stylesheet' type='text/css'/>
+	</head>
+	<body>
+		<div class='container-principal'>
+			<h2>Sistema de Estoque</h2>
+			<form method='POST' id='formLogin'>
+				<label><strong>Usuario</strong></label>
+				<input type='text' name='campo_usuario' placeholder='Digite seu usuário' autocomplete='off'required/>
+				<label><strong>Senha</strong></label>
+				<input type='password' name='campo_senha' placeholder='Digite sua senha'required/>
+				<input type='submit' value='Entrar'/>
+				<input type='button' value='Esqueci minha senha' id='btnEsqueciSenha'/>
+			</form>
+			<h3>Caso seja sua primeira vez aqui, utilize o usuário abaixo.<h3>
+			<p>Usuário: estoque01</p>
+			<p>Senha: teste</p>
+		</div>
+		<div class='modal' id='modalTrocaSenha'>
+			<div class='container-modal'>				
+				<label><strong>Email</strong></label>
+				<form  id='form-modal' method='POST' action='redefinir'>
+				<input type='email' name='email' placeholder='Insira aqui seu email.' autocomplete='off' required/>
+				<input type='submit' value='Solicitar redefinição de senha' id='btnEmail'/>
+				</form>
+				<input type='button' value='Cancelar' id='btnCancelar'/>				
+			</div>
+		</div>
+		<script src='<?php echo BASE_URL;?>assets/js/jquery-3.2.1.min.js' type='text/javascript'></script>
+		<script src='<?php echo BASE_URL;?>assets/js/login.js' type='text/javascript'></script>
+		<script src='<?php echo BASE_URL;?>assets/js/modalTrocaSenha.js' type='text/javascript'></script>		
+	</body>
+</html>

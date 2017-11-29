@@ -17,7 +17,7 @@ function Alterar(){
 			var email = $('input[name=campo_AltEmail]').val();
 			
 			$.ajax({
-				url:'http://sistema_estoque.pc/models/AlteraUsuario.php',
+				url:'http://projeto_sistema_estoque.pc/models/AlteraUsuario.php',
 				type:'POST',
 				data:{email:email, id:id},
 				success:function(msgE){
@@ -37,7 +37,7 @@ $(function(){
 	$('.tabelaUsuarios').ready(function(){
 		
 		$.ajax({
-			url:'http://sistema_estoque.pc/models/TabelaUsuarios.php',
+			url:'http://projeto_sistema_estoque.pc/models/TabelaUsuarios.php',
 			type:'POST',
 			dataType:'json',
 			success:function(json){
